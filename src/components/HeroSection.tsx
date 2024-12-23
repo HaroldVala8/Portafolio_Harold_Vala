@@ -17,6 +17,7 @@ export default function HeroSection() {
         <div className={SectionConfig.containerStyles}>
           {/* Foto */}
           <div className={SectionConfig.photoStyles}></div>
+          
   
           {/* Texto */}
           <div>

@@ -29,7 +29,7 @@ export default function Navbar() {
               className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
             >
               <img
-                src="/public/home.svg"
+                src="./icons/home.svg"
                 alt="Inicio"
                 className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
               />
@@ -45,7 +45,7 @@ export default function Navbar() {
               className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
             >
               <img
-                src="/icons/projects.svg"
+                src="./icons/projects.svg"
                 alt="Proyectos"
                 className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
               />
@@ -61,7 +61,7 @@ export default function Navbar() {
               className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
             >
               <img
-                src="/icons/resume.svg"
+                src="./icons/resume.svg"
                 alt="Currículum"
                 className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
               />
@@ -77,7 +77,7 @@ export default function Navbar() {
               className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
             >
               <img
-                src="/icons/about.svg"
+                src="./icons/about.svg"
                 alt="Sobre mí"
                 className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
               />

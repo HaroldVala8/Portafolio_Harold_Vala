@@ -19,7 +19,7 @@ export default function Sidebar() {
           className={`group flex items-center justify-center ${IconConfig.containerSize} ${IconConfig.hoverBackground} ${IconConfig.transition}`}
         >
           <img
-            src="/icons/phone.svg"
+            src="./icons/phone.svg"
             alt="Teléfono"
             className={`group-hover:scale-110 ${IconConfig.iconSize} ${IconConfig.iconColor}`}
           />
@@ -31,7 +31,7 @@ export default function Sidebar() {
           className={`group flex items-center justify-center ${IconConfig.containerSize} ${IconConfig.hoverBackground} ${IconConfig.transition}`}
         >
           <img
-            src="/icons/email.svg"
+            src="./icons/email.svg"
             alt="Correo"
             className={`group-hover:scale-110 ${IconConfig.iconSize} ${IconConfig.iconColor}`}
           />
@@ -45,7 +45,7 @@ export default function Sidebar() {
           className={`group flex items-center justify-center ${IconConfig.containerSize} ${IconConfig.hoverBackground} ${IconConfig.transition}`}
         >
           <img
-            src="/icons/github.svg"
+            src="./icons/github.svg"
             alt="GitHub"
             className={`group-hover:scale-110 ${IconConfig.iconSize} ${IconConfig.iconColor}`}
           />
@@ -59,7 +59,7 @@ export default function Sidebar() {
           className={`group flex items-center justify-center ${IconConfig.containerSize} ${IconConfig.hoverBackground} ${IconConfig.transition}`}
         >
           <img
-            src="/icons/linkedin.svg"
+            src="./icons/linkedin.svg"
             alt="LinkedIn"
             className={`group-hover:scale-110 ${IconConfig.iconSize} ${IconConfig.iconColor}`}
           />
@@ -67,4 +67,3 @@ export default function Sidebar() {
       </aside>
     );
   }
-  
