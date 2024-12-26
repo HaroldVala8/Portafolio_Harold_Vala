@@ -5,7 +5,7 @@ export default function HeroSection() {
       {/* Contenedor principal */}
       <div className="bg-white shadow-lg rounded-lg p-5 max-w-4xl w-full flex flex-col md:flex-row items-center md:items-start space-y-5 md:space-y-0 md:space-x-8">
         {/* Foto */}
-        <div className="w-52 h-52 md:w-72 md:h-72 bg-gray-400 rounded-full overflow-hidden">
+        <div className="w-52 h-52 md:w-80 md:h-72 lg:w-96 lg:h-80 bg-gray-400 rounded-full overflow-hidden">
           <img
             src="./images/hAROLD ALIEN.jpeg" // Asegúrate de que esta ruta sea correcta
             alt="Foto de Harold"
