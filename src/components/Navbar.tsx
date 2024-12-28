@@ -1,89 +1,98 @@
+import { useState, useEffect } from 'react';
+import HomeIcon from './icons/homeIcon';
+import ProjectsIcon from './icons/projectsIcon';
+import ResumeIcon from './icons/resumeIcon';
+import AboutIcon from './icons/aboutIcon';
+
 export default function Navbar() {
-  // Configuración centralizada
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'projects', 'resume', 'about'];
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (let section of sections) {
+        const element = document.getElementById(section);
+        if (element && element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
+          setActiveSection(section);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const IconConfig = {
     size: "w-6 h-6", // Tamaño de los íconos
-    hoverScale: "hover:scale-125", // Escala al pasar el cursor
-    focusScale: "focus:scale-125", // Escala al seleccionar
-    transition: "transition-transform duration-200", // Transición suave
-    containerSize: "p-1 w-16", // Tamaño fijo del contenedor
-    backgroundColor: "bg-[#0693FF]", // Fondo del navbar
-    spacing: "space-x-5", // Espaciado entre los íconos
-    shadow: "shadow-md", // Sombra del navbar
-    iconColor: "text-gray-700", // Color base de los íconos
-    hoverColor: "hover:text-blue-500", // Color al pasar el cursor
+    hoverScale: "hover:scale-110", // Efecto de hover
+    focusScale: "focus:scale-150", // Efecto de focus
+    transition: "transition-transform duration-300 ease-in-out", // Transición suave
+    containerSize: "w-max", // Ajuste del tamaño del contenedor
+    backgroundColor: "bg-gradient-to-r from-blue-500 to-purple-600", // Fondo con degradado
+    spacing: "space-x-7", // Espaciado entre los íconos
+    shadow: "shadow-lg", // Sombra del navbar
+    iconColor: "text-white", // Color de los íconos
+    hoverColor: "hover:text-black", // Color al pasar el cursor
     focusColor: "focus:text-black", // Color al seleccionar
-    labelStyle: "text-xs text-center mt-0.5", // Estilo del texto debajo del ícono
+    labelStyle: "text-xs text-white mt-1", // Texto debajo del ícono
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex justify-center py-3 z-10">
+    <nav className="fixed top-0 left-0 w-full flex justify-center py-3 z-50">
       <div
-        className={`${IconConfig.backgroundColor} ${IconConfig.shadow} rounded-full px-3 py-1 flex ${IconConfig.spacing}`}
+        className={`${IconConfig.backgroundColor} ${IconConfig.shadow} rounded-full px-5 py-2 flex ${IconConfig.spacing}`}
       >
         {/* Ícono de Inicio */}
         <div
-          className={`${IconConfig.containerSize} flex flex-col items-center justify-center rounded-full`}
+          className={`${IconConfig.containerSize} flex flex-col items-center justify-center`}
         >
           <a
             href="#home"
-            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
+            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition} ${activeSection === 'home' ? 'scale-125' : ''}`}
           >
-            <img
-              src="./icons/home.svg"
-              alt="Inicio"
-              className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
-            />
+            <HomeIcon className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`} />
           </a>
           <span className={IconConfig.labelStyle}>Inicio</span>
         </div>
 
         {/* Ícono de Proyectos */}
         <div
-          className={`${IconConfig.containerSize} flex flex-col items-center justify-center rounded-full`}
+          className={`${IconConfig.containerSize} flex flex-col items-center justify-center`}
         >
           <a
             href="#projects"
-            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
+            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition} ${activeSection === 'projects' ? 'scale-125' : ''}`}
           >
-            <img
-              src="./icons/projects.svg"
-              alt="Proyectos"
-              className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
-            />
+            <ProjectsIcon className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`} />
           </a>
           <span className={IconConfig.labelStyle}>Proyectos</span>
         </div>
 
         {/* Ícono de Currículum */}
         <div
-          className={`${IconConfig.containerSize} flex flex-col items-center justify-center rounded-full`}
+          className={`${IconConfig.containerSize} flex flex-col items-center justify-center`}
         >
           <a
             href="#resume"
-            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
+            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition} ${activeSection === 'resume' ? 'scale-125' : ''}`}
           >
-            <img
-              src="./icons/resume.svg"
-              alt="Currículum"
-              className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
-            />
+            <ResumeIcon className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`} />
           </a>
-          <span className={IconConfig.labelStyle}>Currículum</span>
+          <span className={IconConfig.labelStyle}>Certificados</span>
         </div>
 
         {/* Ícono de Sobre mí */}
         <div
-          className={`${IconConfig.containerSize} flex flex-col items-center justify-center rounded-full`}
+          className={`${IconConfig.containerSize} flex flex-col items-center justify-center`}
         >
           <a
             href="#about"
-            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition}`}
+            className={`${IconConfig.hoverScale} ${IconConfig.focusScale} ${IconConfig.transition} ${activeSection === 'about' ? 'scale-125' : ''}`}
           >
-            <img
-              src="./icons/about.svg"
-              alt="Sobre mí"
-              className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`}
-            />
+            <AboutIcon className={`${IconConfig.size} ${IconConfig.iconColor} ${IconConfig.hoverColor} ${IconConfig.focusColor}`} />
           </a>
           <span className={IconConfig.labelStyle}>Sobre mí</span>
         </div>
@@ -91,3 +100,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
