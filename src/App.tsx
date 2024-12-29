@@ -1,12 +1,11 @@
 import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
 import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
 
 export default function App() {
   return (
-    <div className="relative font-sans text-gray-800">
+    <div>
       {/* Barra de Navegación */}
       <Navbar />
 
@@ -34,8 +33,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Barra Lateral */}
-        <Sidebar />
       </div>
     </div>
   );

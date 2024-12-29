@@ -2,7 +2,7 @@ import { projects } from '../data/projects';
 
 export default function ProjectsSection() {
   return (
-    <section className="bg-gray-100 p-10">
+    <section className="bg-gray-100 p-10 md:p-16 lg:p-20">
       {/* Título de la sección con margen dinámico */}
       <h2 className="text-4xl font-bold text-left mb-10 mt-20 sm:mt-24 md:mt-32">
         Proyectos
@@ -28,7 +28,7 @@ export default function ProjectsSection() {
               <div>
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p
-                  className="text-gray-700"
+                  className="text-black text-sm"
                   dangerouslySetInnerHTML={{ __html: project.description }}
                 ></p>
               </div>

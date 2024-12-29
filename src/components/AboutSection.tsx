@@ -2,13 +2,14 @@ import { projects } from "../data/about_data"; // Importa la lista de proyectos
 
 export default function AboutSection() {
   return (
-    <section className="bg-gray-100 py-10">
+    <section className="bg-gray-100 py-16 h-screen">
       {/* Banner principal */}
       <div className="w-full">
         <img
-          src="./images/Banner_Harold.jpeg" // Ruta del banner en `public/images`
+          src="./images/about_banner.jpeg" // Ruta del banner en `public/images`
           alt="Banner"
           className="w-full h-64 object-cover"
+          style={{objectPosition: '50% 68%'}}
         />
       </div>
 
@@ -28,6 +29,7 @@ export default function AboutSection() {
                 <img
                   src={project.image}
                   alt={project.alt}
+                  style={{objectPosition: project.objectPosition}}
                   className="w-full h-40 object-cover"
                 />
               )}
