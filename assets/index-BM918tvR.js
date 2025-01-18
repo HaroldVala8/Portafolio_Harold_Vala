@@ -91,15 +91,15 @@ Error generating stack: `+l.message+`
                     items-center\r
                     gap-5 \r
                     md:col-span-2 md:col-start-2\r
-                     \r
                     bg-white rounded-xl px-4 py-2`,children:[M.jsx("a",{href:"./CV Harold Valadez.pdf",download:!0,"aria-label":"Descargar el CV de Harold Valadez",children:M.jsx("button",{className:`\r
                             flex \r
                             items-center \r
                             justify-center\r
                             w-9\r
                             h-9\r
-                            rounded-full \r
-                            bg-[#ace2fa] \r
+                            rounded-full\r
+                            border-2 border-black \r
+                            bg-[#48d6fa3d] \r
                             ease-out\r
                             hover:scale-125\r
                             duration-300\r
